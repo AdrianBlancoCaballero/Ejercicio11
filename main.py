@@ -17,3 +17,4 @@ while True:
     lista.append(numero)
 
 print("Lista introducida, sin ordenar: ", "\n", lista)
+print(bubble_sort.BubbleSort.print_info())
