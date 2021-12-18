@@ -1,20 +1,29 @@
 # Ejercicio 11
 
-import bubble_sort
-
-lista = []
+import bubble_sort as bs
 
 while True:
+    lista = []
+    fin = False
+
+
     while True:
-        try:
-            numero = int(input("Introduzca el número deseado: "))
+        while True:
+            numero = input("Introduzca el número deseado: ")
+            if numero == "fin":
+                fin = True
+                break
+            try:
+                numero = int(numero)
+                break
+            except:
+                print("El dato intrducido no es un número.")
+
+        if fin or numero == -9999:
             break
-        except:
-            print("El dato intrducido no es un número.")
-    if numero == -9999:
+        lista.append(numero)
+    if fin:
         break
 
-    lista.append(numero)
-
-print("Lista introducida, sin ordenar: ", "\n", lista)
-print(bubble_sort.BubbleSort.print_info())
+    lo = bs.BubbleSort(lista)
+    print("Lista introducida, ordenada: ", "\n", lo.sorted_list)
